@@ -1,0 +1,36 @@
+#%RAML 1.0
+title: Exp_Api
+types:
+  flight: !include datatype/flightdatatype.raml  
+
+/flights:
+  post:
+    body:
+      application/json:
+        example:
+          {
+            "destination":"LAX"
+          }
+    responses:
+      200:
+        body:
+          application/json:            
+              
+      400:
+        body:
+          application/json:
+            example:
+              {
+                "message": there is something problem with data                               you are sending
+              }          
+      500:
+        body:
+          application/json:
+            example:
+              {
+                "message":there is problem with server i.e internal serevr error
+              }
+    
+              
+                   
+          

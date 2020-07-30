@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="input" format="json">
+      <types:shape format="weave" example="examples/input-4.json"><![CDATA[%dw 2.0
+
+type input = {|
+  Envelope: {|
+    Body: {|
+      FullCountryInfoResponse: {|
+        FullCountryInfoResult: {|
+          sISOCode: String, 
+          sName: String, 
+          sCapitalCity: String, 
+          sPhoneCode: String, 
+          sContinentCode: String, 
+          sCurrencyISOCode: String, 
+          sCountryFlag: String, 
+          Languages: {|
+            tLanguage: {|
+              sISOCode: String, 
+              sName: String
+            |}
+          |}
+        |}
+      |}
+    |}
+  |}
+|} {"example": "{\\\"Envelope\\\":{\\\"Body\\\":{\\\"FullCountryInfoResponse\\\":{\\\"FullCountryInfoResult\\\":{\\\"sISOCode\\\":\\\"LA\\\",\\\"sName\\\":\\\"Laos\\\",\\\"sCapitalCity\\\":\\\"Vientiane\\\",\\\"sPhoneCode\\\":\\\"856\\\",\\\"sContinentCode\\\":\\\"AS\\\",\\\"sCurrencyISOCode\\\":\\\"LAK\\\",\\\"sCountryFlag\\\":\\\"http:\\/\\/www.oorsprong.org\\/WebSamples.CountryInfo\\/Flags\\/Laos.jpg\\\",\\\"Languages\\\":{\\\"tLanguage\\\":{\\\"sISOCode\\\":\\\"lao\\\",\\\"sName\\\":\\\"Lao\\\"}}}}}}}"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="output" format="json">
+      <types:shape format="weave" example="examples/output-2.json"><![CDATA[%dw 2.0
+
+type output = {|
+  findFlightResponse: {|
+    return: {|
+      airlineName: String, 
+      code: String, 
+      departureDate: String, 
+      destination: String, 
+      emptySeats: String, 
+      origin: String, 
+      planeType: String, 
+      price: String
+    |}
+  |}, 
+  FullCountryInfoResponse: {|
+    FullCountryInfoResult: {|
+      sISOCode: String, 
+      sName: String, 
+      sCapitalCity: String, 
+      sPhoneCode: String, 
+      sContinentCode: String, 
+      sCurrencyISOCode: String, 
+      sCountryFlag: String, 
+      Languages: {|
+        tLanguage: {|
+          sISOCode: String, 
+          sName: String
+        |}
+      |}
+    |}
+  |}
+|} {"example": "{\\\"findFlightResponse\\\":{\\\"return\\\":{\\\"airlineName\\\":\\\"Delta\\\",\\\"code\\\":\\\"A1QWER\\\",\\\"departureDate\\\":\\\"2015\\/08\\/11\\\",\\\"destination\\\":\\\"LAX\\\",\\\"emptySeats\\\":\\\"18\\\",\\\"origin\\\":\\\"MUA\\\",\\\"planeType\\\":\\\"Boing 747\\\",\\\"price\\\":\\\"496.0\\\"}},\\\"FullCountryInfoResponse\\\":{\\\"FullCountryInfoResult\\\":{\\\"sISOCode\\\":\\\"LA\\\",\\\"sName\\\":\\\"Laos\\\",\\\"sCapitalCity\\\":\\\"Vientiane\\\",\\\"sPhoneCode\\\":\\\"856\\\",\\\"sContinentCode\\\":\\\"AS\\\",\\\"sCurrencyISOCode\\\":\\\"LAK\\\",\\\"sCountryFlag\\\":\\\"http:\\/\\/www.oorsprong.org\\/WebSamples.CountryInfo\\/Flags\\/Laos.jpg\\\",\\\"Languages\\\":{\\\"tLanguage\\\":{\\\"sISOCode\\\":\\\"lao\\\",\\\"sName\\\":\\\"Lao\\\"}}}}}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+</types:mule>

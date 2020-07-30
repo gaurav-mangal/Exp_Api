@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="expapiFlow" doc:id="4a51c947-8eb1-4265-a530-b18f13f4b7da" >
+		<http:request method="POST" doc:name="Request" doc:id="743f4e70-f664-4897-acb4-38678e3fc5cd" url="http://0.0.0.0:8082/api/flightsNDest">
+			<reconnect />
+		</http:request>
+		<logger level="INFO" doc:name="Logger" doc:id="cdc377b0-683c-4059-a602-dfd8526f0970" message="#[payload]"/>
+	</flow>
+</mule>

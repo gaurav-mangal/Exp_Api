@@ -1,0 +1,32 @@
+{
+"findFlightResponse": {
+"return": {
+"airlineName": "Delta",
+"code": "A1QWER",
+"departureDate": "2015/08/11",
+"destination": "LAX",
+"emptySeats": "18",
+"origin": "MUA",
+"planeType": "Boing 747",
+"price": "496.0"
+}
+},
+"FullCountryInfoResponse": {
+"FullCountryInfoResult": {
+"sISOCode": "LA",
+"sName": "Laos",
+"sCapitalCity": "Vientiane",
+"sPhoneCode": "856",
+"sContinentCode": "AS",
+"sCurrencyISOCode": "LAK",
+"sCountryFlag": "http://www.oorsprong.org/WebSamples.CountryInfo/Flags/Laos.jpg",
+"Languages": {
+"tLanguage": {
+"sISOCode": "lao",
+"sName": "Lao"
+
+}
+}
+}
+}
+}

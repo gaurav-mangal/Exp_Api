@@ -35,7 +35,7 @@
                     <muleVersion>4.3.0</muleVersion>
                     <username>gaurimangal</username>
                     <password>Suncity@456</password>
-                    <applicationName>Experience_Api</applicationName>
+                    <applicationName>Experience-Api</applicationName>
                     <environment>Sandbox</environment>
                     <workers>1</workers>
                     <workerType>MICRO</workerType>
